@@ -15,6 +15,23 @@ public class EmployeeCRUD {
 	private String select_one = "Select * from employee_details where employee_id = ?";
 	private String insert_one = "insert into employee_details values(?,?,?)";
 	private String update_one = "update employee_details set name =?, salary=? where employee_id=?";
+	private String delete_one = "delete from employee_details where employee_id=?";
+	
+//Delete one	
+		public void deleteEmployee(int employee_id) {
+			try {
+				Connection connection = DriverManager.getConnection(databaseURL, userName, password);
+				// System.out.println("Connection Successful!");
+				PreparedStatement preparedStatement = connection.prepareStatement(delete_one);
+				preparedStatement.setInt(1, employee_id);
+				preparedStatement.executeUpdate();
+				connection.close();
+			} catch (SQLException e) {
+				System.out.println("Connection Failed");
+				System.out.println("Invalid Login Details");
+				e.printStackTrace();
+			}
+		}
 	
 //update one	
 	public void updateEmployee(int employee_id, String name ,double salary) {

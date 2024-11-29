@@ -17,17 +17,23 @@ public class EmployeeCRUDMain {
 		//print all
 		employeeCRUD.getAllEmployees();
 		System.out.println("-----------------------------------");
-		
-// update a employee
-		System.out.println("Enter EmployeeId to be updated");
+
+//delete one		
+		System.out.println("Enter EmployeeId to be deleted");
 		employeeId = scanner.nextInt();
 
-		System.out.println("Enter name");
-		name = scanner.next();
-
-		System.out.println("Enter salary");
-		salary = scanner.nextDouble();
-		employeeCRUD.updateEmployee(employeeId, name, salary);
+		employeeCRUD.deleteEmployee(employeeId);
+		
+// update a employee
+//		System.out.println("Enter EmployeeId to be updated");
+//		employeeId = scanner.nextInt();
+//
+//		System.out.println("Enter name");
+//		name = scanner.next();
+//
+//		System.out.println("Enter salary");
+//		salary = scanner.nextDouble();
+//		employeeCRUD.updateEmployee(employeeId, name, salary);
 		
 //insert one employee
 //		System.out.println("Enter EmployeeId");
